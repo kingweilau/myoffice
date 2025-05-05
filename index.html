@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Property Listings</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+  <!-- Header -->
+  <header class="bg-blue-600 text-white py-6">
+    <div class="container mx-auto text-center">
+      <h1 class="text-3xl font-bold">Your Property Agency</h1>
+      <p class="mt-2">Find Your Dream Home with Us</p>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="py-12">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-2xl font-semibold mb-4">About Us</h2>
+      <p class="text-gray-700 max-w-2xl mx-auto">
+        As a dedicated property agent, I am committed to helping you find the perfect home or investment property. With years of experience in the real estate market, I provide personalized service to meet your needs.
+      </p>
+    </div>
+  </section>
+
+  <!-- Listings Section -->
+  <section id="listings" class="bg-white py-12">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl font-semibold text-center mb-8">Our Listings</h2>
+      <div id="listing-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-12">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-2xl font-semibold mb-4">Get in Touch</h2>
+      <p class="text-gray-700 mb-4">Interested in a property or have questions? Contact me today!</p>
+      <p class="text-gray-700">Email: your.email@example.com</p>
+      <p class="text-gray-700">Phone: (123) 456-7890</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-blue-600 text-white py-4">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2025 Your Property Agency. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Property listings data
+    const properties = [
+      {
+        title: "Modern Family Home",
+        description: "Spacious 4-bedroom house with a large backyard, perfect for families.",
+        price: "$450,000",
+        image: "https://via.placeholder.com/400x300?text=Property+1",
+        location: "123 Main St, City"
+      },
+      {
+        title: "Downtown Condo",
+        description: "Stylish 2-bedroom condo in the heart of the city with great amenities.",
+        price: "$320,000",
+        image: "https://via.placeholder.com/400x300?text=Property+2",
+        location: "456 Elm St, City"
+      },
+      {
+        title: "Luxury Villa",
+        description: "Elegant 5-bedroom villa with a pool and stunning views.",
+        price: "$1,200,000",
+        image: "https://via.placeholder.com/400x300?text=Property+3",
+        location: "789 Oak Ave, City"
+      }
+    ];
+
+    // Function to display listings
+    function displayListings() {
+      const container = document.getElementById('listing-container');
+      properties.forEach(property => {
+        const card = document.createElement('div');
+        card.className = 'bg-gray-100 rounded-lg shadow-lg overflow-hidden';
+        card.innerHTML = `
+          <img src="${property.image}" alt="${property.title}" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="text-xl font-semibold">${property.title}</h3>
+            <p class="text-gray-600 mt-2">${property.description}</p>
+            <p class="text-blue-600 font-bold mt-2">${property.price}</p>
+            <p class="text-gray-500 mt-1">${property.location}</p>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    // Call the function to display listings on page load
+    displayListings();
+  </script>
+</body>
+</html>
